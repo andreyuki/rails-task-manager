@@ -1,7 +1,29 @@
 <div class="container">
-  <h1><%= @task.title %></h1>
-  <p><%= @task.details %></p>
-  <div>
-    <%= link_to "Edit task", edit_task_path %>
+  <div class="d-flex align-items-center justify-content-between mt-3">
+    <h1><%= @task.title %></h1>
+    <div>
+      <%= link_to edit_task_path do %>
+        <button class="btn btn-light border">
+          <i class="fa-solid fa-pencil me-1"></i>
+          <span>Edit this task</span>
+        </button>
+      <% end %>
+    </div>
+  </div>
+  <p class="alert alert-secondary"><%= @task.details %></p>
+  <% if @task.completed %>
+    <i class="fa-regular fa-square-check"></i>
+    <span>This task is completed</span>
+  <% else %>
+    <i class="fa-regular fa-square"></i>
+    <span>This task is not completed yet</span>
+  <% end %>
+
+
+  <div class="border-top mt-3 text-primary">
+    <%= link_to tasks_path, class: "text-decoration-none" do %>
+      <i class="fa-solid fa-clock-rotate-left mt-3"></i>
+      <span>Back to list</span>
+    <% end %>
   </div>
 </div>

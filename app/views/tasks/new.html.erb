@@ -14,7 +14,13 @@
           <%= f.label :completed, "Completed", class: "form-check-label ms-2" %>
         </div>
       <% end %>
-      <%= f.submit 'Add task', class: "btn btn-success mt-3" %>
+      <%= f.submit 'Add task', class: "btn btn-primary mt-3" %>
   <% end %>
+  <div class="border-top mt-3 text-primary">
+    <%= link_to tasks_path, class: "text-decoration-none" do %>
+      <i class="fa-solid fa-clock-rotate-left mt-3"></i>
+      <span>Back to list</span>
+    <% end %>
+  </div>
 
 </div>
